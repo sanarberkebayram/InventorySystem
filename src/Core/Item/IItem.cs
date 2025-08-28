@@ -1,7 +1,8 @@
-namespace InventorySystem.Core.Item;
-
-public interface IItem
+namespace InventorySystem.Core.Item
 {
-    public string Id { get; }
-    public string ItemTypeId { get; }
+    public interface IItem
+    {
+        public string Id { get; }
+        public string ItemTypeId { get; }
+    }
 }

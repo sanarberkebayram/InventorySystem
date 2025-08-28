@@ -1,15 +1,16 @@
-namespace InventorySystem.Core.Item;
-
-public class ItemDefault : IItem
+namespace InventorySystem.Core.Item
 {
-    public string Id { get; protected set; }
-    public string ItemTypeId { get; protected set; }
-
-    public ItemDefault(string itemTypeId, string id = "")
+    public class ItemDefault : IItem
     {
-        if (string.IsNullOrWhiteSpace(id))
-            id = Guid.NewGuid().ToString();
-        Id = id;
-        ItemTypeId = itemTypeId;
+        public string Id { get; protected set; }
+        public string ItemTypeId { get; protected set; }
+
+        public ItemDefault(string itemTypeId, string id = "")
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                id = Guid.NewGuid().ToString();
+            Id = id;
+            ItemTypeId = itemTypeId;
+        }
     }
 }

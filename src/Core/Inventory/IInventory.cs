@@ -1,23 +1,23 @@
-
 using InventorySystem.Core.Item;
 
-namespace InventorySystem.Core.Inventory;
-
-public interface IInventory
+namespace InventorySystem.Core.Inventory
 {
-    int Count { get; }
+    public interface IInventory
+    {
+        int Count { get; }
 
-    bool CanAdd(IItem item);
-    bool HasItem(IItem item);
-    bool HasItem(string itemId);
+        bool CanAdd(IItem item);
+        bool HasItem(IItem item);
+        bool HasItem(string itemId);
 
-    void AddItem(IItem item);
-    void RemoveItem(string itemId);
-    void RemoveItem(IItem item);
+        void AddItem(IItem item);
+        void RemoveItem(string itemId);
+        void RemoveItem(IItem item);
 
-    IItem GetItem(string itemId);
-    IReadOnlyList<IItem> GetItems();
+        IItem GetItem(string itemId);
+        IReadOnlyList<IItem> GetItems();
 
-    event Action<IItem> OnItemAdded;
-    event Action<IItem> OnItemRemoved;
+        event Action<IItem> OnItemAdded;
+        event Action<IItem> OnItemRemoved;
+    }
 }
